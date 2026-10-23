@@ -11,7 +11,7 @@
 
 ```mermaid
 graph TD
-    subgraph L1 ["Рівень сприйняття (Perception Layer)"]
+    subgraph L1 [Рівень сприйняття - Perception Layer]
         D1[Датчик температури і вологості повітря BME280]
         D2[Датчик вологості та температури ґрунту]
         D3[Датчик освітленості Lux-метр]
@@ -22,22 +22,21 @@ graph TD
         A4[Система опалення]
     end
 
-    subgraph L2 ["Мережевий рівень (Network Layer)"]
+    subgraph L2 [Мережевий рівень - Network Layer]
         N1[Локальна мережа: інтерфейс RS-485 / Modbus RTU]
-        N2[Шлюз IoT (Edge Gateway) з підтримкою Wi-Fi / 4G]
+        N2[Шлюз IoT Edge Gateway з підтримкою Wi-Fi / 4G]
     end
 
-    subgraph L3 ["Рівень обробки (Processing & Storage Layer)"]
+    subgraph L3 [Рівень обробки - Processing & Storage Layer]
         E1[Локальний Edge-контролер / Node-RED / локальна БД SQLite]
         C1[Хмарна платформа AWS IoT / сервер баз даних Time-series DB]
     end
 
-    subgraph L4 ["Рівень застосунків (Application Layer)"]
+    subgraph L4 [Рівень застосунків - Application Layer]
         W1[Вебдодаток та Dashboard агронома]
-        M1[Мобільний застосунок для сповіщень (Push/Telegram)]
+        M1[Мобільний застосунок для сповіщень Push/Telegram]
     end
 
-    %% Зв'язки між рівнями
     D1 --> N1
     D2 --> N1
     D3 --> N1
